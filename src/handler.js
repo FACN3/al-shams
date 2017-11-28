@@ -1,4 +1,5 @@
 const http = require("http");
+const fs = require("fs");
 
 const apiKey = "927f2f963976b225f9725ffae71d9787";
 const url = `http://api.openweathermap.org/data/2.5/weather?q=London&appid=${
@@ -17,7 +18,8 @@ const handlersFunc = {
         console.log(data);
       });
     });
-  })
+  }),
+  home: (homeHandler = (req, res) => {})
 };
 
 module.exports = handlersFunc;
