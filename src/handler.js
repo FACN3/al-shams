@@ -5,6 +5,7 @@ const path = require('path');
 const apiKey = "927f2f963976b225f9725ffae71d9787";
 const link = `http://api.openweathermap.org/data/2.5/weather?q=London&appid=${apiKey}`;
 
+  
 
   const fetchData = () => {
     http.get(url, res => {
@@ -19,21 +20,25 @@ const link = `http://api.openweathermap.org/data/2.5/weather?q=London&appid=${ap
     });
   }
 
-  const homeHandler = (req, res) => {
-    const url = req.url;
-    if (url === '/') {
+  
+  
+  const homeHandler = (request, response) => {
+    const url = request.url;
+    if(url === '/'){
       const filePath = path.join(__dirname, '../public/index.html');
     fs.readFile(filePath, (error,file )=>{
       if(error){
-        res.writeHead(500, {'Content-Type':'text/html'});
-        res.end("There was an error in the server");
+        response.writeHead(500, {'Content-Type':'text/html'});
+        response.end("There was an error in the server");
       }
-      res.writeHead(200, {'Content-Type':'text/html'});
-      res.end(file);
+      response.writeHead(200, {'Content-Type':'text/html'});
+      response.end(file);
     });
-    }
-
   }
+}
+  
+
+
 
 
 
@@ -44,3 +49,4 @@ const link = `http://api.openweathermap.org/data/2.5/weather?q=London&appid=${ap
 
 
 module.exports = homeHandler;
+
