@@ -47,4 +47,32 @@ img {
   right: 0;
   top: 0%;
   height: 20%;
+  width: auto;
+}
+
+@media only screen
+and (max-width : 400px) {
+  img {
+    position: fixed;
+      height: 10%;
+      width: auto;
+  }
+  h2 {
+    top: -2%;
+    height: 10%;
+    font-size: 250%;
+  }
+  button {
+    position: absolute;
+    width: 15%;
+    padding: 5% 0;
+    font-size: 0;
+  }
+  input {
+    width: 50%;
+  }
+  h1 {
+    font-size: 100%;
+    top: 45%;
+  }
 }
