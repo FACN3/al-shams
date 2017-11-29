@@ -1,6 +1,31 @@
 
 body {
-  background-color: blue;
+  background: rgb(94,149,186); /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover, rgba(94,149,186,1) 1%, rgba(0,114,191,1) 100%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(94,149,186,1) 1%,rgba(0,114,191,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, rgba(94,149,186,1) 1%,rgba(0,114,191,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5e95ba', endColorstr='#0072bf',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  display: flex;
+  justify-content: center;
+  height: 90vh;
+  width: 100vh
 }
 
+form {
+  position: absolute;
+  top: 50%;
+  left: 40%
+}
 
+h1 {
+  position: absolute;
+  top: 40%;
+  left: 40%
+}
+
+img {
+  position: fixed;
+  right: 0;
+  top: 0%;
+  height: 20%;
+}
