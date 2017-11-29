@@ -9,7 +9,8 @@ const link = "http://api.openweathermap.org/data/2.5/weather?q=";
 
 function handler(req, res) {
   var url = req.url;
- console.log(url);
+
+
   if (url.indexOf('/api?search=')!==-1) {
     console.log(url);
     var url = req.url;
@@ -17,21 +18,29 @@ function handler(req, res) {
 
     var newlink = link + query + "&appid=" + apiKey;
 
-    var data = "";
+    
 
         request(newlink, function(err, res1, body) {  
-             console.log(JSON.parse(body));
-        res.writeHead(200, { "Content-Type": "application/json" });
+          if (err) {
+            console.log('Request error: ', err)
+          }
+       console.log(JSON.parse(body));
+
+        res.writeHead(200, { "Content-Type": "application/text" });
+        // console.log('body: ', res)
         res.end(body);
 
 });
 
+  } else if (url == "/") {
+    handlePublicFiles("/index.html", res)
+  } else {
+    handlePublicFiles(url, res)
   }
 
+}
 
-else   if (url == "/") {
-    url = "/index.html";
-  }
+function handlePublicFiles(url, serverResponse) {
   var parts = url.split(".")[1];
 
   var contentTypes = {
@@ -43,16 +52,16 @@ else   if (url == "/") {
 
   fs.readFile(path.join(__dirname, "..", "public", url), (err, data) => {
     if (err) {
-      res.writeHead(500, {
+      serverResponse.writeHead(500, {
         "Content-Type": "text/html"
       });
-      res.end("Errooor");
+      serverResponse.end("Errooor");
     } else {
-      res.writeHead(200, {
+      serverResponse.writeHead(200, {
         "Content-Type": contentTypes
       });
 
-      res.end(data);
+      serverResponse.end(data);
     }
   });
 
