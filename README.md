@@ -8,8 +8,7 @@ in our case, its Weather API
 
 ## Architecture
 
-![ideas](https://user-images.githubusercontent.com/24490876/33326449-a8f729c0-d45d-11e7-8adc-54b27a1a3c8b.jpg)
-
+![Architecture](https://user-images.githubusercontent.com/24490876/33364123-b64c042c-d4eb-11e7-93a6-3649275eea1b.jpg)
 
 
 ## Code languages
