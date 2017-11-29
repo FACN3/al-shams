@@ -1,15 +1,15 @@
 const http = require("http");
 const fs = require("fs");
-
 const path = require("path");
 
-// const apiKey = "927f2f963976b225f9725ffae71d9787";
-// const url = `http://api.openweathermap.org/data/2.5/weather?q=London&appid=${
-//   apiKey
-// }`;
+const apiKey = "927f2f963976b225f9725ffae71d9787";
+const link = 'http://api.openweathermap.org/data/2.5/weather?q=' ;
 
-function homeHandler(req, res) {
+ /*+ query + '&appid=' + apiKey;*/
+
+function handler(req, res) {
   var url = req.url;
+  
   if (url == "/") {
     url = "/index.html";
   }
@@ -37,9 +37,35 @@ function homeHandler(req, res) {
       res.end(data);
     }
   });
+
+
+  if(url.indexOf('/getweather')){
+  var url = req.url;
+  var query = url.split('=')[1];
+  var newlink = link + query +  '&appid=' + apiKey;
+
+  http.get(newlink, function(res){
+    var data = '';
+
+    res.on('data', function(chunk){
+      data+=chunk;
+    });
+
+    res.on('end', function(){
+      var jsonData = JSON.parse(data);
+      console.log(jsonData);
+    });
+  });
+  }
+
+
 }
 
-module.exports = homeHandler;
+
+
+
+
+module.exports = handler;
   
 
 
