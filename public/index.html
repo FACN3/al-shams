@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,23 +8,29 @@
   <link rel="stylesheet" type="text/css" href="/css/style.css">
   <title>Al shams</title>
 </head>
+
 <body>
   <div class="container">
 
     <h1>World weather</h1>
-        <form onsubmit="showWeather()">
-          <input id="cityName" placeholder="city" type="text" name="cityname" value="" required>
-          <button id="serchButton" type="submit" name="">Search</button>
-        </form>
+    <form onsubmit="showWeather()">
+      <input id="cityName" placeholder="city" type="text" name="cityname" value="" required>
+      <button id="serchButton" type="submit" name="">Search</button>
+    </form>
 
 
-  <div class="weatherDetails">
-    <div id="cityWeather">
+    <div class="weatherDetails">
+      <div id="cityWeather">
+      </div>
     </div>
   </div>
-</div>
-<script src="/js/request.js"></script>
-<script src="/js/index.js"></script>
+  <script src="/js/request.js"></script>
+  <script src="/js/index.js"></script>
+
+<img src="http://www.pngmart.com/files/3/Weather-PNG-Photos.png" alt="sunny  and cloudy">
+<!-- <img src="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Status-weather-clear-icon.png" alt="sunny"> -->
+<!-- <img src="https://www.gustibali.com/wp-content/uploads/2013/12/Weather-Forecast.png" alt="rainy"> -->
 
 </body>
+
 </html>
