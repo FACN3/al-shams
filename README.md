@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/FACN3/al-shams.svg?branch=master)](https://travis-ci.org/FACN3/al-shams)
+
 # AL Shams
 [Marlen](https://github.com/MarlenAw) [Amir](https://github.com/Amirk390) [Hoslack](https://github.com/hoslack)
 
