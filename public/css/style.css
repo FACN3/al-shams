@@ -14,13 +14,32 @@ body {
 form {
   position: absolute;
   top: 50%;
-  left: 40%
+  left: 40%;
+}
+
+input {
+}
+
+input[placeholder] {
+  text-align: center;
+  font-weight: bold;
+  color: black;
 }
 
 h1 {
   position: absolute;
   top: 40%;
   left: 40%
+}
+h2 {
+  position: fixed;
+  left: 2%;
+  top: -4%;
+  height: 20%;
+  font-size: 500%;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: yellow;
 }
 
 img {
