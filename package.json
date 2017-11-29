@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tape": "node tests/test.js | tap-spec",
-   
+    "tape": "node tests/test.js | tap-spec"
+
   },
   "repository": {
     "type": "git",
