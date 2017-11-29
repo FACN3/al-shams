@@ -1,7 +1,7 @@
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
-
+const request=require('request');
 const apiKey = "927f2f963976b225f9725ffae71d9787";
 const link = "http://api.openweathermap.org/data/2.5/weather?q=";
 
@@ -9,14 +9,27 @@ const link = "http://api.openweathermap.org/data/2.5/weather?q=";
 
 function handler(req, res) {
   var url = req.url;
+ console.log(url);
+  if (url.indexOf('/api?search=')!==-1) {
+    console.log(url);
+    var url = req.url;
+    var query = url.split("=")[1];
 
-  function sendData(data) {
-    res.writeHead(200, { "Content-Type": "application/json" });
-    res.write(data);
-    res.end();
+    var newlink = link + query + "&appid=" + apiKey;
+
+    var data = "";
+
+        request(newlink, function(err, res1, body) {  
+             console.log(JSON.parse(body));
+        res.writeHead(200, { "Content-Type": "application/json" });
+        res.end(body);
+
+});
+
   }
 
-  if (url == "/") {
+
+else   if (url == "/") {
     url = "/index.html";
   }
   var parts = url.split(".")[1];
@@ -42,26 +55,7 @@ function handler(req, res) {
       res.end(data);
     }
   });
-  if (url.indexOf("/getweather") !== -1) {
-    var url = req.url;
-    var query = url.split("=")[1];
 
-    var newlink = link + query + "&appid=" + apiKey;
-
-    var data = "";
-    http.get(newlink, function(response) {
-      response.on("data", function(chunk) {
-        data += chunk;
-      });
-
-      response.on("end", function() {
-        var jsonData = JSON.parse(data);
-        console.log('This is jsonData : -------- ', jsonData);
-        res.writeHead(200, { "Content-Type": "application/json" });
-        res.end(jsonData);
-      });
-    });
-  }
 }
 
 module.exports = handler;
