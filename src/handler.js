@@ -1,5 +1,6 @@
 const http = require("http");
 const fs = require("fs");
+
 const path = require("path");
 
 // const apiKey = "927f2f963976b225f9725ffae71d9787";
@@ -32,9 +33,13 @@ function homeHandler(req, res) {
       res.writeHead(200, {
         "Content-Type": contentTypes
       });
+
       res.end(data);
     }
   });
 }
 
 module.exports = homeHandler;
+  
+
+
