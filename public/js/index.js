@@ -1,12 +1,14 @@
-const cityInput = document.getElementById("cityName");
-const cityButton = document.getElementById("serchButton");
-var weatherDiv = document.getElementById("cityWeather");
+function showWeather() {
+  var query = document.querySelector("#cityName").value;
 
-function showTodayWeather(data) {
-  weatherDive.innerHTML = "";
-  cityInput.value = "";
+  var xhr = new XMLHttpRequest();
 
-  var theday = document.createElement("h3");
-  theday.textContent = "Today's weather";
-  weatherDiv.appendChild(theday);
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      var data = JSON.parse(xhr.responseText);
+    }
+  };
+
+  xhr.open("GET", "/getweather?search=" + query, true);
+  xhr.send();
 }
