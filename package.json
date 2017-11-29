@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node src/server.js",
     "tape": "node tests/test.js | tap-spec",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -1,25 +1,40 @@
 const http = require("http");
 const fs = require("fs");
+const path = require("path");
 
-const apiKey = "927f2f963976b225f9725ffae71d9787";
-const url = `http://api.openweathermap.org/data/2.5/weather?q=London&appid=${
-  apiKey
-}`;
+// const apiKey = "927f2f963976b225f9725ffae71d9787";
+// const url = `http://api.openweathermap.org/data/2.5/weather?q=London&appid=${
+//   apiKey
+// }`;
 
-const handlersFunc = {
-  fetchData: (fetchData = () => {
-    http.get(url, res => {
-      var data = "";
+function homeHandler(req, res) {
+  var url = req.url;
+  if (url == "/") {
+    url = "/index.html";
+  }
+  var parts = url.split(".")[1];
 
-      res.on("data", chunk => {
-        data += chunk;
+  var contentTypes = {
+    css: "text/css",
+    html: "text/html",
+    js: "application/javascript",
+    ico: "image/x-icon"
+  }[parts];
+  console.log(__dirname);
+  console.log(path.join(__dirname, "..", "public", url));
+  fs.readFile(path.join(__dirname, "..", "public", url), (err, data) => {
+    if (err) {
+      res.writeHead(500, {
+        "Content-Type": "text/html"
       });
-      res.on("end", () => {
-        console.log(data);
+      res.end("Errooor");
+    } else {
+      res.writeHead(200, {
+        "Content-Type": contentTypes
       });
-    });
-  }),
-  home: (homeHandler = (req, res) => {})
-};
+      res.end(data);
+    }
+  });
+}
 
-module.exports = handlersFunc;
+module.exports = homeHandler;
