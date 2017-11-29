@@ -13,11 +13,11 @@
   <div class="container">
 
     <h1>World weather</h1>
-    <form onsubmit="showWeather()">
-      <input id="cityName" placeholder="Insert City Name" type="text" name="cityname" value="" required>
-      <button id="serchButton" type="submit" name="">Search</button>
-    </form>
 
+        <form id="form" onsubmit="showWeather()">
+          <input id="cityName" placeholder="city" type="text" value="" required>
+          <button id="serchButton" type="submit" name="">Search</button>
+        </form>
 
     <div class="weatherDetails">
       <div id="cityWeather">
