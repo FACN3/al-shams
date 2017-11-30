@@ -40,14 +40,23 @@ h2 {
 
 img {
   position: fixed;
-  right: 0;
+  right: 1%;
   top: 0%;
   height: 20%;
   width: auto;
 }
 
+.cityname{
+  position:fixed;
+  font-size: 500%;
+  color: white;
+  top:0;
+  left: 38%;
+}
+
+
 @media only screen
-and (max-width : 400px) {
+and (max-width : 450px) {
   img {
     position: fixed;
       height: 10%;
@@ -60,8 +69,8 @@ and (max-width : 400px) {
   }
   button {
     position: absolute;
-    width: 15%;
-    padding: 5% 0;
+    width: 30%;
+    padding: 11% 0;
     font-size: 0;
   }
   input {
@@ -70,13 +79,14 @@ and (max-width : 400px) {
   h1 {
     font-size: 100%;
     top: 45%;
+    left: 70%
   }
-}
-
-.cityname{
-  font-size: 80px;
-  color: white;
-  position:fixed;
-  top:0;
-  left: 40;
+  form {
+    left: 80%
+  }
+  .cityname{
+    position: fixed;
+    font-size: 250%;
+    left: 38%;
+  }
 }
