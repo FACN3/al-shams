@@ -4,9 +4,12 @@
 [Marlen](https://github.com/MarlenAw) [Amir](https://github.com/Amirk390) [Hoslack](https://github.com/hoslack)
 
 ## About
-In this project we made connetion from Back End to Front End using API
 
-in our case, its Weather API
+##### Welcome to *AL SHAMS* Project
+In this project we made an API that will connect to the data from [OpenWeather](https://openweathermap.org) Website which gives you a details of the temperature and the sky status (Rainy, Sunny or Cloudy) in a clean simplistic way
+
+##### All you have to do is
+Just write your city of interests and :star:***VWALLA***:star: the magic happends right infront of your eyes
 
 ## Architecture
 
