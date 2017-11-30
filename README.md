@@ -3,6 +3,8 @@
 # AL Shams
 [Marlen](https://github.com/MarlenAw) [Amir](https://github.com/Amirk390) [Hoslack](https://github.com/hoslack)
 
+## [Check The Demo Here](https://alshams.herokuapp.com/)
+
 ## About
 
 ##### Welcome to *AL SHAMS* Project
