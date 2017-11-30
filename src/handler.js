@@ -5,31 +5,19 @@ const request=require('request');
 const apiKey = "927f2f963976b225f9725ffae71d9787";
 const link = "http://api.openweathermap.org/data/2.5/weather?q=";
 
-/*+ query + '&appid=' + apiKey;*/
-
 function handler(req, res) {
   var url = req.url;
 
-
   if (url.indexOf('/api?search=')!==-1) {
-    console.log(url);
     var url = req.url;
     var query = url.split("=")[1];
-
     var newlink = link + query + "&appid=" + apiKey;
 
-    
-
-        request(newlink, function(err, res1, body) {  
+        request(newlink, function(err, res1, body) {
           if (err) {
-            console.log('Request error: ', err)
           }
-       console.log(JSON.parse(body));
-
         res.writeHead(200, { "Content-Type": "application/text" });
-        // console.log('body: ', res)
         res.end(body);
-
 });
 
   } else if (url == "/") {
@@ -37,7 +25,6 @@ function handler(req, res) {
   } else {
     handlePublicFiles(url, res)
   }
-
 }
 
 function handlePublicFiles(url, serverResponse) {
