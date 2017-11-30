@@ -17,9 +17,6 @@ form {
   left: 40%;
 }
 
-input {
-}
-
 input[placeholder] {
   text-align: center;
   font-weight: bold;
@@ -38,7 +35,7 @@ h2 {
   height: 20%;
   font-size: 500%;
   color: white;
-  
+
 }
 
 img {
