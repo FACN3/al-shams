@@ -38,8 +38,7 @@ h2 {
   height: 20%;
   font-size: 500%;
   color: white;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: yellow;
+  
 }
 
 img {
@@ -75,4 +74,12 @@ and (max-width : 400px) {
     font-size: 100%;
     top: 45%;
   }
+}
+
+.cityname{
+  font-size: 80px;
+  color: white;
+  position:fixed;
+  top:0;
+  left: 40;
 }
