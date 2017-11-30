@@ -13,7 +13,6 @@
   <div class="container">
 
     <h1>World weather</h1>
-    <h2>23°C</h2>
         <form id="form" onsubmit="showWeather()">
           <input id="cityName" placeholder="Insert City Name" type="text">
           <button id="serchButton" type="submit" name="">Search</button>
@@ -25,9 +24,11 @@
   </div>
 
 
-<img src="http://www.pngmart.com/files/3/Weather-PNG-Photos.png" alt="sunny  and cloudy">
-<!-- <img src="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Status-weather-clear-icon.png" alt="sunny"> -->
-<!-- <img src="https://www.gustibali.com/wp-content/uploads/2013/12/Weather-Forecast.png" alt="rainy"> -->
+
+<img id="sunny" src="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Status-weather-clear-icon.png" alt="sunny" style=" display: none;">
+<img id="rainy" src="https://www.gustibali.com/wp-content/uploads/2013/12/Weather-Forecast.png" alt="rainy" style=" display: none;">
+<img id="clouds" src="http://www.pngmart.com/files/3/Weather-PNG-Photos.png" alt="sunny  and cloudy" style=" display: none;">
+
 
 
   <script src="/js/index.js"></script>
