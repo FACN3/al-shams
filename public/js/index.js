@@ -42,10 +42,10 @@ function showWeather() {
               sunny.style.display = 'none';
 
       }else{
-            alert('No weather type');
-            clouds.style.display = 'block'; 
+            
+            clouds.style.display = 'none'; 
             rainy.style.display = 'block';
-            sunny.style.display = 'block';
+            sunny.style.display = 'none';
 
       }
 
